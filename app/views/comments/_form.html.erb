@@ -13,6 +13,6 @@
 
 
   <% end %>
-<% if user_signed_in? %>
+<% if user_signed_in? && (current_user || current_user.admin?) %>
 <%= subscribe_to "/comments/new" %>
 <% end %>
