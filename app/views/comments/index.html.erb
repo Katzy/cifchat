@@ -13,8 +13,11 @@
           <div class="header">
             <h1>Join the discussion!</h1>
           </div>
-
+          <% if current_user %>
         <%= render '/comments/form' %>
+        <% else %>
+        <h3>Sign in or Create an account to chat with other NCS Wrestling fans.</h3>
+        <% end %>
 
         </div>
       </div>
@@ -22,4 +25,4 @@
       </div>
     </div>
 
-<br><br><br><br><br>
+

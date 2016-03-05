@@ -1,15 +1,13 @@
- <% if current_user %>
+
   <%= form_for Comment.new, remote: true do |f| %>
 
 
 
       <%= f.text_field :body %>
-      <%= f.submit 'Send' %>
 
+
+
+    <%= f.submit 'Send' %>
   <% end %>
 
-
-<% else %>
-      <h3>Sign in or Create an account to chat with the moderators.</h3>
-    <% end %>
 <%= subscribe_to "/comments/new" %>
