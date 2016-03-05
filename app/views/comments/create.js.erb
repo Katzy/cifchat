@@ -1,9 +1,12 @@
 <% publish_to "/comments/new" do %>
-
 $("#chat").append("<%= j render(@comment) %>");
 var myDiv = document.getElementById("chat");
 myDiv.scrollTop = myDiv.scrollHeight;
 <% end %>
 $("#new_comment")[0].reset();
+
+
+
+
 
 
