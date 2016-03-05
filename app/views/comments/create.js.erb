@@ -2,7 +2,9 @@
 <% if @comment.admin %>
 $("#chat").append("<%= j render(@comment) %>");
 <% else %>
-$("#chat").append("Your Message was sent to moderators!");
+
+  $("#chat").append("<%= @comment.user.name %> sent a message!");
+
 <% end %>
 var myDiv = document.getElementById("chat");
 myDiv.scrollTop = myDiv.scrollHeight;

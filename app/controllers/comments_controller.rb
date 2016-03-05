@@ -27,8 +27,12 @@ class CommentsController < ApplicationController
       @comment.admin = true
     end
     if @comment.save
-      if !current_user.admin?
+      if !@comment.admin
         PrivatePub.publish_to("/comments/new", "alert('#{@comment.user.name.upcase} from #{@comment.user.city}: #{@comment.body}');")
+      end
+      respond_to do |format|
+
+        format.js
       end
     end
   end

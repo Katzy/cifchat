@@ -13,5 +13,6 @@
 
 
   <% end %>
-
+<% if user_signed_in? %>
 <%= subscribe_to "/comments/new" %>
+<% end %>
