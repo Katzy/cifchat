@@ -1,0 +1,13 @@
+
+  <%= form_for Comment.new, remote: true do |f| %>
+
+
+
+      <%= f.text_field :body %>
+
+
+
+    <%= f.submit 'Send' %>
+  <% end %>
+
+<%= subscribe_to "/comments/new" %>

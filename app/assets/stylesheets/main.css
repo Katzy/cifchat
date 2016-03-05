@@ -1,0 +1,143 @@
+.ui.sidebar a {
+  padding-left: 2em;
+  font-size: 20px;
+  display: inline-block;
+  width: 100%;
+
+}
+
+.ui.sidebar .weight.item {
+
+  font-size: 25px;
+}
+
+.ui.league.sidebar a {
+
+  font-size: 20px;
+}
+.ui.league.sidebar .league a {
+
+  font-size: 15px;
+
+}
+
+.ui.wrestler.sidebar .school a {
+
+  font-size: 14px;
+}
+
+.ui.info.sidebar a {
+
+  font-size: 15px;
+}
+
+
+.ui.header b{
+
+  font-size: 30px;
+}
+
+.ui.main.menu {
+
+  font-size: 18px;
+}
+
+.images .image {
+
+  height: 350px;
+
+}
+
+.ui.grid .mobile.only.row .images .image {
+
+  height: 250px;
+}
+
+.state .image {
+
+  height: 150px;
+}
+
+.ui.left.segment .image {
+
+  height: 60px;
+}
+
+.ui.segment .grid {
+  border-left: 25px;
+  border-right: 25px;
+  padding: 3em;
+
+}
+
+.ui.grid .ui.segment ul {
+
+  max-height: 500px;
+  overflow: auto;
+}
+
+li h4 {
+
+  font-size: 20px;
+}
+
+.ui.grid .ui.row .weight h1 {
+
+  font-size: 50px;
+}
+
+.ui.grid .ui.row .weight h2 {
+
+  font-size: 40px;
+
+}
+
+.ui.grid .ui.row .weight h3 {
+
+  font-size: 35px;
+
+}
+.ui.grid .alert {
+
+  font-size: 35px;
+}
+
+.ui.grid .row .text {
+
+  font-size: 20px;
+}
+
+.ui.grid .row .weight {
+
+  font-size: 35px;
+}
+
+.streaming.header {
+
+  font-size: 35px;
+}
+.ui.footer.segment .ncs.image {
+
+  width: 50%;
+}
+
+.ui.footer.segment .left.column {
+
+  font-size: 20px;
+}
+
+.ui.grid .column b {
+
+
+  font-size: 40px;
+}
+
+.ui.grid .column .segment b {
+
+  font-size: 14px;
+}
+
+.item b {
+
+  color:  #0066ff;
+}

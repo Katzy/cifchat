@@ -1,3 +1,14 @@
+GIT
+  remote: https://github.com/suzan2go/less-rails.git
+  revision: c2f110982615dc9ed5faa22a84156480727a9f22
+  branch: fix-nomethoderror-for-sprockets3
+  specs:
+    less-rails (2.7.0)
+      actionpack (>= 4.0)
+      less (~> 2.6.0)
+      sprockets (> 2, < 4)
+      tilt
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -36,7 +47,11 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    addressable (2.4.0)
     arel (6.0.3)
+    autoprefixer-rails (6.3.3.1)
+      execjs
+    bcrypt (3.1.10)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     builder (3.2.2)
@@ -48,12 +63,43 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.10.0)
+    commonjs (0.2.7)
     concurrent-ruby (1.0.1)
+    cookiejar (0.3.0)
+    daemons (1.2.3)
     debug_inspector (0.0.2)
+    devise (3.5.6)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 3.2.6, < 5)
+      responders
+      thread_safe (~> 0.1)
+      warden (~> 1.2.3)
+    em-http-request (1.1.3)
+      addressable (>= 2.3.4)
+      cookiejar (<= 0.3.0)
+      em-socksify (>= 0.3)
+      eventmachine (>= 1.0.3)
+      http_parser.rb (>= 0.6.0)
+    em-socksify (0.3.1)
+      eventmachine (>= 1.0.0.beta.4)
     erubis (2.7.0)
+    eventmachine (1.0.9.1)
     execjs (2.6.0)
+    faye (1.1.2)
+      cookiejar (>= 0.3.0)
+      em-http-request (>= 0.3.0)
+      eventmachine (>= 0.12.0)
+      faye-websocket (>= 0.9.1)
+      multi_json (>= 1.0.0)
+      rack (>= 1.0.0)
+      websocket-driver (>= 0.5.1)
+    faye-websocket (0.10.3)
+      eventmachine (>= 0.12.0)
+      websocket-driver (>= 0.5.1)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
+    http_parser.rb (0.6.0)
     i18n (0.7.0)
     jbuilder (2.4.1)
       activesupport (>= 3.0.0, < 5.1)
@@ -63,6 +109,11 @@ GEM
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
     json (1.8.3)
+    less (2.6.0)
+      commonjs (~> 0.2.7)
+    less-rails-semantic_ui (2.1.8.2)
+      less-rails (>= 2.6.0, < 2.8.0)
+    libv8 (3.16.14.13)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.3)
@@ -73,7 +124,10 @@ GEM
     multi_json (1.11.2)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
+    orm_adapter (0.5.0)
     pg (0.18.4)
+    private_pub (1.0.3)
+      faye
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -96,6 +150,11 @@ GEM
       rails-deprecated_sanitizer (>= 1.0.1)
     rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
+    rails_12factor (0.0.3)
+      rails_serve_static_assets
+      rails_stdout_logging
+    rails_serve_static_assets (0.0.5)
+    rails_stdout_logging (0.0.4)
     railties (4.2.5)
       actionpack (= 4.2.5)
       activesupport (= 4.2.5)
@@ -104,6 +163,9 @@ GEM
     rake (10.5.0)
     rdoc (4.2.2)
       json (~> 1.4)
+    ref (2.0.0)
+    responders (2.1.1)
+      railties (>= 4.2.0, < 5.1)
     sass (3.4.21)
     sass-rails (5.0.4)
       railties (>= 4.0.0, < 5.0)
@@ -122,6 +184,13 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
+    therubyracer (0.12.2)
+      libv8 (~> 3.16.14.0)
+      ref
+    thin (1.6.4)
+      daemons (~> 1.0, >= 1.0.9)
+      eventmachine (~> 1.0, >= 1.0.4)
+      rack (~> 1.0)
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (2.0.2)
@@ -132,25 +201,38 @@ GEM
     uglifier (2.7.2)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    warden (1.2.6)
+      rack (>= 1.0)
     web-console (2.3.0)
       activemodel (>= 4.0)
       binding_of_caller (>= 0.7.2)
       railties (>= 4.0)
       sprockets-rails (>= 2.0, < 4.0)
+    websocket-driver (0.6.3)
+      websocket-extensions (>= 0.1.0)
+    websocket-extensions (0.1.2)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  autoprefixer-rails
   byebug
   coffee-rails (~> 4.1.0)
+  devise
   jbuilder (~> 2.0)
   jquery-rails
+  less-rails!
+  less-rails-semantic_ui
   pg (~> 0.15)
+  private_pub
   rails (= 4.2.5)
+  rails_12factor
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   spring
+  therubyracer
+  thin
   turbolinks
   uglifier (>= 1.3.0)
   web-console (~> 2.0)

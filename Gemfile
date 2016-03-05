@@ -26,6 +26,8 @@ gem 'less-rails-semantic_ui'
 gem 'autoprefixer-rails'
 gem 'therubyracer'
 gem 'devise'
+
+gem "less-rails", :git => 'https://github.com/suzan2go/less-rails.git', :branch => 'fix-nomethoderror-for-sprockets3'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.

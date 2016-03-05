@@ -1,0 +1,28 @@
+
+
+    <div class="ui grid">
+      <div class="four wide column">
+      </div>
+      <div class="eight wide column">
+        <div class="ui segment">
+          <ul id="chat">
+              <%= render @comments %>
+            </ul>
+            </div>
+          <div class="ui center aligned segment">
+          <div class="header">
+            <h1>Join the discussion!</h1>
+          </div>
+          <% if current_user %>
+        <%= render '/comments/form' %>
+        <% else %>
+        <h3>Sign in or Create an account to chat with other NCS Wrestling fans.</h3>
+        <% end %>
+
+        </div>
+      </div>
+      <div class="four wide column">
+      </div>
+    </div>
+
+

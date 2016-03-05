@@ -13,4 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require private_pub
+//= require semantic_ui/semantic_ui
 //= require_tree .

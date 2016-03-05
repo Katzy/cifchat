@@ -1,0 +1,32 @@
+ <div class="ui center aligned top attached header">
+
+
+     <b>CIF STATE WRESTLING CHAMPIONSHIPS LIVE CHATROOM</b><br>Rabobank Arena<br>Bakersfield, California<br>Mar 4-5, 2016<br>
+
+    </div>
+<div class="ui menu">
+<div class="item">
+      <%= link_to "Home", root_path %>
+    </div>
+
+  <div class="right menu">
+   <% if user_signed_in? %>
+        <% if current_user.admin? %>
+          <div class="ui item">ADMIN
+          </div>
+        <% end %>
+         <div class="ui item">
+          Welcome <%= (current_user.name).split(" ").first %>
+        </div>
+        <div class="ui item">
+         <%= link_to "LOGOUT", destroy_user_session_path, :method => :delete %>
+         </div>
+      <% else %>
+      <div class="ui item">
+        <a class="active item" href="/users/sign_in">LOG IN / SIGN UP</a>
+      </div>
+      <% end %>
+
+
+  </div>
+</div>
