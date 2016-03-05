@@ -31,10 +31,11 @@ class CommentsController < ApplicationController
         format.html
         format.js
       end
-      if !@comment.admin
-        PrivatePub.publish_to("/comments/new", "alert('#{@comment.user.name.upcase} from #{@comment.user.city}: #{@comment.body}');")
-      end
     end
+    if !@comment.admin
+      PrivatePub.publish_to("/comments/new", "alert('#{@comment.user.name.upcase} from #{@comment.user.city}: #{@comment.body}');")
+    end
+
   end
 
 
