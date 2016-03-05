@@ -1,8 +1,6 @@
 <% publish_to "/comments/new" do %>
 <% if current_user.admin %>
 $("#chat").append("<%= j render(@comment) %>");
-<% else %>
-$("#chat").append("<%= j render("hi") %>");
 <% end %>
 var myDiv = document.getElementById("chat");
 myDiv.scrollTop = myDiv.scrollHeight;
