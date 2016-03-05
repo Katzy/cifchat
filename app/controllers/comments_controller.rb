@@ -32,12 +32,8 @@ class CommentsController < ApplicationController
 
   def create
     @comment = current_user.comments.build(comment_params)
-    @user = current_user
 
 
-    if current_user.admin?
-      @comment.admin = true
-    end
     @comment.save
 
   end
