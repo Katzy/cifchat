@@ -3,7 +3,17 @@ class CommentsController < ApplicationController
 
   def index
     @user = current_user
-    @comments = Comment.where(:admin => true).last(10)
+    @comments = []
+    @cmts = Comment.all
+    @cmts.each do |comment|
+      if comment.admin
+        @comments << comment
+      else
+        comment.body = "msg sent to moderators!"
+        @comments << comment
+      end
+    end
+    @comments = @comments[-6..-1]
     respond_to do |format|
       format.html
       format.js
@@ -28,12 +38,13 @@ class CommentsController < ApplicationController
     end
     if @comment.save
       respond_to do |format|
-        format.html
+
         format.js
       end
     end
     if !@comment.admin
       PrivatePub.publish_to("/comments/new", "alert('#{@comment.user.name.upcase} from #{@comment.user.city}: #{@comment.body}');")
+      PrivatePub.subscribe_to("/comments/new")
     end
 
   end
