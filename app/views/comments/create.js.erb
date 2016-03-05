@@ -1,7 +1,9 @@
 <% publish_to "/comments/new" do %>
-
+<% if @comment.admin %>
 $("#chat").append("<%= j render(@comment) %>");
-
+<% else %>
+$("#chat").append("Your Message was sent to moderators!");
+<% end %>
 var myDiv = document.getElementById("chat");
 myDiv.scrollTop = myDiv.scrollHeight;
 <% end %>
