@@ -23,7 +23,7 @@ class CommentsController < ApplicationController
 
   def new
     @comment = Comment.new
-    @comments = Comment.order('created_at ASC')
+
   end
 
   def destroy
@@ -40,7 +40,7 @@ class CommentsController < ApplicationController
 
 
   def comment_params
-    params.require(:comment).permit(:body, :admin, :user_id)
+    params.require(:comment).permit(:body, :user_id)
   end
 
 end
