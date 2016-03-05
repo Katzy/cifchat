@@ -30,21 +30,14 @@ class CommentsController < ApplicationController
 
 
   def create
+    @comment = current_user.comments.build(comment_params)
     @user = current_user
-    @comment = Comment.new(comment_params)
+
     @comment.user_id = @user.id
     if current_user.admin?
       @comment.admin = true
     end
-    if @comment.save
-
-      if !@comment.admin
-        PrivatePub.publish_to("/comments/new", "alert('#{@comment.user.name.upcase}(#{@comment.user.city}): #{@comment.body}');")
-      else
-        respond_to :js
-      end
-    end
-
+    @comment.save
 
   end
 
