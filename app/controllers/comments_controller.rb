@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
 
   def index
     @user = current_user
-    @comments = Comment.last(10)
+    @comments = Comment.last(30)
     # @comments = []
     # @cmts = Comment.all
     # @cmts.each do |comment|
